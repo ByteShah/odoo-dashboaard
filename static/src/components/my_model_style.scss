@@ -1,0 +1,17 @@
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    margin: auto;
+    padding: 20px;
+}
+
+.date-label h4 {
+    margin-bottom: 0; // Removes bottom margin from h4 tags in labels
+    line-height: normal; // Adjusts the line height to align with input
+}
+
+.date-input {
+    height: calc(1.5em + 0.75rem + 2px); // Adjusts height to match Bootstrap's default form control height
+}

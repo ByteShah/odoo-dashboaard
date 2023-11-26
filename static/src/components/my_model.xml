@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlMyModel" owl="1">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h1 class="text-primary fw-bold">My Model Dashboard</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-if="state.dataReady">
+                        <div class="chart-container">
+                            <ChartRenderer type="'line'" title="'My Model Report'" labels="state.labels" datasets="state.datasets" />
+                        </div>
+                    </t>
+            </div>
+        </div>
+    </t>
+</templates>

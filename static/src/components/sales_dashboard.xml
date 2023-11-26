@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlSalesDashboard" owl="1">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h1 class="text-primary fw-bold">Customer Dashboard</h1>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center me-2 px-2">
+                                            <label for="fromDate" class="form-label date-label px-2">
+                                                <h4>From:</h4>
+                                            </label>
+                                            <input type="date" id="fromDate" class="form-control date-input" t-model="state.fromDate">
+                                        </div>
+                                        <div class="d-flex align-items-center me-2 px-2">
+                                            <label for="toDate" class="form-label date-label px-2">
+                                                <h4>To:</h4>
+                                            </label>
+                                            <input type="date" id="toDate" class="form-control date-input" t-model="state.toDate">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary px-4" t-on-click="confirmSelection">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-if="card_state.kpiVisible">
+                        <div class="row">
+                            <KpiCard name="state.fromDate + ' to ' + state.toDate" value="state.currentYearPartnersCount"/>
+                            <KpiCard name="previousPeriod.from + ' to ' + previousPeriod.to" value="state.previousYearPartnersCount"/>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
